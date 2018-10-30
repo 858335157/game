@@ -1,12 +1,14 @@
 package com.wyj.game;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.Display;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -55,20 +57,20 @@ public class MainActivity extends Activity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
 
-        /*//获得屏幕宽高
+        //获得屏幕宽高
         WindowManager wm = (WindowManager) this
                 .getSystemService(Context.WINDOW_SERVICE);
         assert wm != null;
         int w = wm.getDefaultDisplay().getWidth();  //屏幕宽度
         width = w/7;                         //单位宽度
         int h = wm.getDefaultDisplay().getHeight(); //屏幕高度
-        height = h/5;                        //单位高度*/
+        height = h/5;                        //单位高度
 
 
-        //3、获取屏幕的默认分辨率
+        /*//3、获取屏幕的默认分辨率
         Display display = getWindowManager().getDefaultDisplay();
         int w = display.getWidth();//宽度
-        int h = display.getHeight();//高度
+        int h = display.getHeight();//高度*/
 
         width = w/7.0;                         //单位宽度
 
@@ -89,17 +91,19 @@ public class MainActivity extends Activity {
         });*/
 
         //游戏开始
-        if(width!=0)
+        if(width!=0){
             firstBuild();//第一次绘制，特别卡！！！！
+        }
 
-        /*while(true){
+
+        while(true){
             init();
             build();
             doit();
             if(!judge()){
                 break;
             }
-        }*/
+        }
 
     }
 
@@ -181,4 +185,7 @@ round1: for(int i = 1; i < 10; i++ ){
     }
 
 
+    public void doing(View view) {//方向键控制
+
+    }
 }
